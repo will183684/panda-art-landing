@@ -918,6 +918,65 @@ footer {
   #feedback .testimonial-wall { grid-template-columns: 1fr; }
 }
 
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.art-card {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.art-placeholder {
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  font-size: 40px;
+  background: linear-gradient(135deg, rgba(241,165,68,.18), rgba(72,170,141,.14));
+  color: var(--muted);
+}
+
+.art-placeholder.has-image {
+  padding: 0;
+}
+
+.art-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.art-card figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.art-card figcaption span:first-child { color: var(--ink); }
+
+.gallery-placeholder-note {
+  margin-top: 14px;
+}
+
+@media (max-width: 980px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 640px) {
   .bubble-panel { min-height: auto; }
   #feedback .bubble-orb { width: min(340px, 96%); border-radius: 50%; }
