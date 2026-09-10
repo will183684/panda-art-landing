@@ -965,10 +965,6 @@ footer {
 
 .art-card figcaption span:first-child { color: var(--ink); }
 
-.gallery-placeholder-note {
-  margin-top: 14px;
-}
-
 @media (max-width: 980px) {
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
 }
