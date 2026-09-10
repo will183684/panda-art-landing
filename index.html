@@ -3,32 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Panda Art Online 课程介绍｜熊猫派艺术</title>
-  <meta name="description" content="Panda Art Online 熊猫派艺术线上绘画课程介绍、课程表、试课预约、老师评价入口。" />
+  <title>Panda Art / Panda Chinese 课程介绍｜熊猫派艺术</title>
+  <meta name="description" content="熊猫派艺术 Panda Art 线上绘画课程与 Panda Chinese 中文识字课程介绍、课程表、试课预约、老师评价入口。" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body data-active-tab="art">
   <nav class="nav">
     <div class="wrap nav-inner">
-      <a class="brand" href="#top" aria-label="Panda Art Online 首页">
-        <span class="logo">🐼</span>
-        <span>Panda Art Online</span>
+      <a class="brand" href="#top" aria-label="首页">
+        <span class="logo">
+          <img data-tab="art" src="assets/brand/panda-art-logo.png" alt="Panda Art logo" />
+          <img data-tab="chinese" src="assets/brand/panda-chinese-logo.png" alt="Panda Chinese logo" />
+        </span>
+        <span class="brand-name">
+          <span data-tab="art"><b>Panda</b> <span class="brand-sub">Art</span></span>
+          <span data-tab="chinese"><b>Panda</b> <span class="brand-sub">Chinese</span></span>
+        </span>
       </a>
       <div class="nav-links">
         <a href="#why">课程亮点</a>
-        <a href="#gallery">作品墙</a>
+        <a data-tab="art" href="#gallery">作品墙</a>
         <a href="#schedule">课程表</a>
         <a href="#trial">预约试课</a>
-        <a href="#feedback">老师评价</a>
+        <a data-tab="art" href="#feedback">老师评价</a>
         <a href="#faq">FAQ</a>
       </div>
       <a class="btn btn-primary" href="#trial">预约试课</a>
+    </div>
+    <div class="tab-switch">
+      <button class="tab-btn" type="button" data-tab-btn="art" aria-selected="true">
+        <img src="assets/brand/panda-art-logo.png" alt="" /> 美术课 Panda Art
+      </button>
+      <button class="tab-btn" type="button" data-tab-btn="chinese" aria-selected="false">
+        <img src="assets/brand/panda-chinese-logo.png" alt="" /> 中文课 Panda Chinese
+      </button>
     </div>
   </nav>
 
   <main id="top">
     <section class="hero">
-      <div class="wrap hero-grid">
+      <div class="wrap hero-grid" data-tab="art">
         <div>
           <div class="eyebrow">3–16岁｜中文授课｜线上小班绘画</div>
           <h1>Panda Art Online 课程介绍</h1>
@@ -73,14 +87,60 @@
           </div>
         </aside>
       </div>
+
+      <div class="wrap hero-grid" data-tab="chinese">
+        <div>
+          <div class="eyebrow eyebrow-green">3–12岁｜中文识字｜线上小班课程</div>
+          <h1>Panda Chinese 中文识字课程介绍</h1>
+          <p class="lead">
+            面向海外华裔儿童的中文识字课程，结合文化与艺术元素，在沉浸式语境中提升中文听说读写能力。2026 年开始为美西孩子提供中文试课。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-honey" href="#trial">预约中文试课</a>
+            <a class="btn btn-soft" href="#contact">先问问题</a>
+          </div>
+          <div class="pills" aria-label="课程特点">
+            <span class="pill"><b>沉浸式语境</b>，结合文化</span>
+            <span class="pill">中文识字</span>
+            <span class="pill">小班为主</span>
+            <span class="pill">Seattle 本地支持</span>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="课程速览">
+          <div class="mini-showcase">
+            <div class="show-card">
+              <div class="art-mark green"></div>
+              <div>
+                <h3>字里有故事</h3>
+                <p>结合汉字文化与情境讲解，帮助孩子理解并记住汉字。</p>
+              </div>
+            </div>
+            <div class="show-card">
+              <div class="art-mark"></div>
+              <div>
+                <h3>结合艺术元素</h3>
+                <p>融入绘画与文化元素，让识字过程更有画面感。</p>
+              </div>
+            </div>
+            <div class="show-card">
+              <div class="art-mark purple"></div>
+              <div>
+                <h3>灵活适配时差</h3>
+                <p>专业师资实时互动教学，灵活适配海外时间安排。</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
     </section>
 
     <section id="why" class="section">
-      <div class="wrap">
+      <div class="wrap" data-tab="art">
         <div class="section-head">
           <div>
             <div class="eyebrow">课程亮点</div>
-            <h2>不是“照着画完”，而是学会表达</h2>
+            <h2>不是"照着画完"，而是学会表达</h2>
           </div>
           <p>我们的目标是让孩子在日常生活中发现美，用艺术表达自己的观察、想法和情绪。</p>
         </div>
@@ -108,29 +168,93 @@
           </article>
         </div>
       </div>
+
+      <div class="wrap" data-tab="chinese">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow eyebrow-green">课程亮点</div>
+            <h2>在情境里认字，而不是死记硬背</h2>
+          </div>
+          <p>结合文化与艺术元素，让孩子在沉浸式语境中提升中文听说读写能力。</p>
+        </div>
+
+        <div class="grid-4">
+          <article class="info-card">
+            <div class="icon">📖</div>
+            <h3>沉浸式语境</h3>
+            <p>结合文化与艺术元素，在情境中理解和记忆汉字。</p>
+          </article>
+          <article class="info-card">
+            <div class="icon">🀄</div>
+            <h3>识字为先</h3>
+            <p>从汉字认知起步，逐步提升听说读写综合能力。</p>
+          </article>
+          <article class="info-card">
+            <div class="icon">🌏</div>
+            <h3>海外定制</h3>
+            <p>专为海外华裔儿童设计，理解海外语言环境的挑战。</p>
+          </article>
+          <article class="info-card">
+            <div class="icon">🏡</div>
+            <h3>在家上课</h3>
+            <p>免接送，时间灵活，适配海外时差。</p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section id="about" class="section">
-      <div class="wrap split">
+    <section class="section">
+      <div class="wrap split" data-tab="art">
         <div class="info-card">
           <div class="eyebrow">课程理念</div>
-          <h2>培养审美，也保护想象力</h2>
+          <h2>看见世界，发现美</h2>
           <p>
-            课程从美学启蒙到写实创作循序渐进。我们重视技巧，也重视孩子的观察力、创造力和独立判断，让他们在自由创作中形成自己的风格。
+            熊猫派艺术始终以"看见世界·发现美"为办学理念——生活不缺少美，缺少的是发现美的眼睛。课程围绕两大核心原则展开：常态生活的非常审美，注重日常生活审美的培养；连接与研究性学习，通过建立连接和研究性学习增强孩子的创造力。
           </p>
         </div>
         <div class="info-card">
           <h3>我们提供什么</h3>
           <ul class="plain-list">
             <li>3–16岁线上绘画课程，覆盖基础、进阶、彩铅、素描和 1对1。</li>
-            <li>教师团队稳定，具有多年儿童美术教学经验。</li>
-            <li>Seattle 线下教务支持，本地学员可咨询材料和线下活动。</li>
+            <li>教师团队专业稳定，具备扎实书画功底和丰富教学经验。</li>
+            <li>小班手把手教学，针对不同年龄与基础定制方案，传授技法同时培养审美素养与自信。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="wrap split" data-tab="chinese">
+        <div class="info-card">
+          <div class="eyebrow eyebrow-green">课程理念</div>
+          <h2>在情境中认字，在文化中生根</h2>
+          <p>
+            中文课程结合文化与艺术元素，帮助孩子在沉浸式语境中提升中文听说读写能力，让在海外成长的孩子也能自然亲近母语和中华文化。
+          </p>
+        </div>
+        <div class="info-card">
+          <h3>我们提供什么</h3>
+          <ul class="plain-list">
+            <li>面向海外华裔儿童的中文识字课程，2026 年开始试课。</li>
+            <li>专业师资实时互动教学，灵活适配海外时差。</li>
+            <li>结合文化与艺术元素，让识字过程更有情境和故事感。</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section id="gallery" class="section">
+    <section id="curriculum" class="section" data-tab="art">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">美术课程体系</div>
+            <h2>3阶8级 · 科学进阶培养路径</h2>
+          </div>
+          <p>按儿童认知发展规律划分为综合类绘画与专项类绘画两大方向，覆盖 3 岁至 16 岁全年龄段。</p>
+        </div>
+        <img class="curriculum-diagram" src="assets/brand/art-curriculum-diagram.png" alt="熊猫派艺术 3阶8级美术课程体系图" />
+      </div>
+    </section>
+
+    <section id="gallery" class="section" data-tab="art">
       <div class="wrap">
         <div class="section-head">
           <div>
@@ -147,7 +271,7 @@
     </section>
 
     <section id="schedule" class="section">
-      <div class="wrap">
+      <div class="wrap" data-tab="art">
         <div class="section-head">
           <div>
             <div class="eyebrow">课程表</div>
@@ -175,12 +299,27 @@
           </aside>
         </div>
       </div>
+
+      <div class="wrap" data-tab="chinese">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow eyebrow-green">课程表</div>
+            <h2>Panda Chinese 开课安排</h2>
+          </div>
+          <p>中文课程 2026 年开始试课，具体班级和时间正在筹备中。</p>
+        </div>
+
+        <div class="info-card">
+          <h3>先登记试课意向</h3>
+          <p>目前中文课暂未开放完整排课，感兴趣可以先登记试课意向，教务老师会根据孩子年龄和可上课时间安排合适的班级和时段。</p>
+        </div>
+      </div>
     </section>
 
     <section id="trial" class="section">
       <div class="wrap split">
         <div id="contact" class="cta-panel">
-          <div class="eyebrow" style="background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.18);color:#fff;">预约前想先问？</div>
+          <div class="eyebrow" style="background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.22);color:#fff;">预约前想先问？</div>
           <h2>可以先联系教务老师</h2>
           <p>不确定孩子适合哪个班、材料怎么准备、时间怎么选，都可以先问。</p>
 
@@ -203,12 +342,19 @@
         </div>
 
         <div class="form-card">
-          <div class="eyebrow">$6 跟班试课</div>
-          <h2>直接试课，请留下这些信息</h2>
+          <div class="eyebrow" id="trialEyebrow">$6 跟班试课</div>
+          <h2 id="trialHeading">直接试课，请留下这些信息</h2>
           <p class="small-note" style="margin-bottom:16px;">提交后，教务老师会根据孩子情况推荐试课班级。</p>
 
           <form id="trialForm">
             <div class="form-grid">
+              <div class="field full">
+                <label for="courseInterest">咨询课程</label>
+                <select id="courseInterest" name="courseInterest">
+                  <option>美术绘画课</option>
+                  <option>中文识字课</option>
+                </select>
+              </div>
               <div class="field">
                 <label for="studentName">学生名字</label>
                 <input id="studentName" name="studentName" autocomplete="name" placeholder="例如：Emma" />
@@ -227,13 +373,13 @@
                 <input id="birthMonth" name="birthMonth" type="month" />
               </div>
               <div class="field">
-                <label for="experience">画画经验</label>
+                <label for="experience">相关经验</label>
                 <select id="experience" name="experience">
                   <option value="">请选择</option>
                   <option>零基础</option>
-                  <option>有一点兴趣/在家画</option>
+                  <option>有一点兴趣/在家接触过</option>
                   <option>上过线下或线上课</option>
-                  <option>有较稳定绘画基础</option>
+                  <option>有较稳定基础</option>
                 </select>
               </div>
               <div class="field full">
@@ -248,7 +394,7 @@
 
             <div class="form-actions">
               <button class="btn btn-primary" type="submit">用邮件发送试课信息</button>
-              <a class="btn btn-soft js-external-form" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAALC9j_JUOEVBV1Q3TUU1MFZDUDJOWEs1VUczWldRTC4u&amp;origin=QRCode" target="_blank" rel="noopener noreferrer">打开原预约表</a>
+              <a class="btn btn-soft js-external-form" data-tab="art" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAALC9j_JUOEVBV1Q3TUU1MFZDUDJOWEs1VUczWldRTC4u&amp;origin=QRCode" target="_blank" rel="noopener noreferrer">打开原预约表</a>
               <button class="btn btn-soft" type="button" id="copyTrial">复制信息模板</button>
             </div>
           </form>
@@ -257,7 +403,7 @@
       </div>
     </section>
 
-    <section id="feedback" class="section">
+    <section id="feedback" class="section" data-tab="art">
       <div class="wrap">
         <div class="section-head">
           <div>
@@ -338,11 +484,11 @@
     </section>
 
     <section id="faq" class="section">
-      <div class="wrap">
+      <div class="wrap" data-tab="art">
         <div class="section-head">
           <div>
             <div class="eyebrow">FAQ</div>
-            <h2>家长常见问题</h2>
+            <h2>家长常见问题（美术课）</h2>
           </div>
           <p>把试课、请假、材料和价格沟通提前说清楚。</p>
         </div>
@@ -382,12 +528,41 @@
           </article>
         </div>
       </div>
+
+      <div class="wrap" data-tab="chinese">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow eyebrow-green">FAQ</div>
+            <h2>家长常见问题（中文课）</h2>
+          </div>
+          <p>中文课刚开始筹备，以下是目前能确定的信息。</p>
+        </div>
+
+        <div class="qa-grid">
+          <article class="qa">
+            <h3>中文课什么时候开始？</h3>
+            <p>计划 2026 年开始试课，具体排期以教务老师通知为准。</p>
+          </article>
+          <article class="qa">
+            <h3>适合什么年龄？</h3>
+            <p>面向海外华裔儿童，具体适合班级请联系教务老师根据孩子情况推荐。</p>
+          </article>
+          <article class="qa">
+            <h3>授课语言和形式是什么？</h3>
+            <p>中文授课，线上小班互动教学，结合文化与艺术元素学习汉字。</p>
+          </article>
+          <article class="qa">
+            <h3>价格和课包怎么看？</h3>
+            <p>正式课价格、课包细节，请联系教务老师了解。</p>
+          </article>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
     <div class="wrap">
-      Panda Art Online｜熊猫派艺术 · 线上绘画课程 · Seattle 本地教务支持
+      Panda Art · Panda Chinese｜熊猫派艺术 · 线上绘画与中文识字课程 · Seattle 本地教务支持
     </div>
   </footer>
 

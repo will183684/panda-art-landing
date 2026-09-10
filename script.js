@@ -138,6 +138,7 @@ async function copyText(text, successText) {
 }
 
 function getTrialText() {
+  const course = document.getElementById("courseInterest").value || "";
   const name = document.getElementById("studentName").value || "";
   const gender = document.getElementById("gender").value || "";
   const birth = document.getElementById("birthMonth").value || "";
@@ -146,15 +147,43 @@ function getTrialText() {
   const note = document.getElementById("trialNote").value || "";
 
   return [
-    "Panda Art Online $6 跟班试课信息",
+    "Panda Art / Panda Chinese 试课信息",
     "",
+    `咨询课程：${course}`,
     `学生名字：${name}`,
     `性别：${gender}`,
     `生日年月：${birth}`,
-    `画画经验：${exp}`,
+    `相关经验：${exp}`,
     `家长联系方式：${contact}`,
     `可上课时间 / 其他问题：${note}`
   ].join("\n");
+}
+
+function initTabs() {
+  const buttons = document.querySelectorAll("[data-tab-btn]");
+  if (!buttons.length) return;
+
+  const trialEyebrow = document.getElementById("trialEyebrow");
+  const trialHeading = document.getElementById("trialHeading");
+  const courseField = document.getElementById("courseInterest");
+
+  function setTab(tab) {
+    document.body.setAttribute("data-active-tab", tab);
+    buttons.forEach((b) => b.setAttribute("aria-selected", String(b.dataset.tabBtn === tab)));
+
+    if (tab === "chinese") {
+      if (trialEyebrow) trialEyebrow.textContent = "预约中文试课";
+      if (trialHeading) trialHeading.textContent = "登记中文试课意向";
+      if (courseField) courseField.value = "中文识字课";
+    } else {
+      if (trialEyebrow) trialEyebrow.textContent = "$6 跟班试课";
+      if (trialHeading) trialHeading.textContent = "直接试课，请留下这些信息";
+      if (courseField) courseField.value = "美术绘画课";
+    }
+  }
+
+  buttons.forEach((b) => b.addEventListener("click", () => setTab(b.dataset.tabBtn)));
+  setTab("art");
 }
 
 function getFeedbackText() {
@@ -183,7 +212,7 @@ document.addEventListener("click", (event) => {
 document.getElementById("trialForm").addEventListener("submit", (event) => {
   event.preventDefault();
   const body = encodeURIComponent(getTrialText());
-  window.location.href = `mailto:caizhao8926@gmail.com?subject=${encodeURIComponent("Panda Art Online 试课预约")}&body=${body}`;
+  window.location.href = `mailto:caizhao8926@gmail.com?subject=${encodeURIComponent("Panda Art / Panda Chinese 试课预约")}&body=${body}`;
 });
 
 document.getElementById("copyTrial").addEventListener("click", () => {
@@ -202,3 +231,4 @@ document.getElementById("copyFeedback").addEventListener("click", () => {
 
 buildBoard();
 buildLegend();
+initTabs();
