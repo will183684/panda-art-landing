@@ -317,11 +317,11 @@
     </section>
 
     <section id="trial" class="section">
-      <div class="wrap split">
-        <div id="contact" class="cta-panel">
-          <div class="eyebrow" style="background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.22);color:#fff;">预约前想先问？</div>
-          <h2>可以先联系教务老师</h2>
-          <p>不确定孩子适合哪个班、材料怎么准备、时间怎么选，都可以先问。</p>
+      <div class="wrap">
+        <div id="contact" class="cta-panel contact-panel-centered">
+          <div class="eyebrow" id="trialEyebrow" style="background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.22);color:#fff;">$6 跟班试课</div>
+          <h2 id="trialHeading">联系教务老师，预约试课</h2>
+          <p>加微信或发邮件，告诉教务老师孩子的年龄和感兴趣的课程（美术 / 中文），老师会帮忙推荐合适的班级和时间。</p>
 
           <div class="contact-row">
             <div class="contact-item">
@@ -339,66 +339,6 @@
               <a class="btn btn-soft" href="mailto:caizhao8926@gmail.com?subject=Panda%20Art%20Online%20%E5%92%A8%E8%AF%A2">发邮件</a>
             </div>
           </div>
-        </div>
-
-        <div class="form-card">
-          <div class="eyebrow" id="trialEyebrow">$6 跟班试课</div>
-          <h2 id="trialHeading">直接试课，请留下这些信息</h2>
-          <p class="small-note" style="margin-bottom:16px;">提交后，教务老师会根据孩子情况推荐试课班级。</p>
-
-          <form id="trialForm">
-            <div class="form-grid">
-              <div class="field full">
-                <label for="courseInterest">咨询课程</label>
-                <select id="courseInterest" name="courseInterest">
-                  <option>美术绘画课</option>
-                  <option>中文识字课</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="studentName">学生名字</label>
-                <input id="studentName" name="studentName" autocomplete="name" placeholder="例如：Emma" />
-              </div>
-              <div class="field">
-                <label for="gender">性别</label>
-                <select id="gender" name="gender">
-                  <option value="">请选择</option>
-                  <option>女孩</option>
-                  <option>男孩</option>
-                  <option>不方便填写</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="birthMonth">生日年月</label>
-                <input id="birthMonth" name="birthMonth" type="month" />
-              </div>
-              <div class="field">
-                <label for="experience">相关经验</label>
-                <select id="experience" name="experience">
-                  <option value="">请选择</option>
-                  <option>零基础</option>
-                  <option>有一点兴趣/在家接触过</option>
-                  <option>上过线下或线上课</option>
-                  <option>有较稳定基础</option>
-                </select>
-              </div>
-              <div class="field full">
-                <label for="parentContact">家长联系方式</label>
-                <input id="parentContact" name="parentContact" placeholder="微信号或 Email" />
-              </div>
-              <div class="field full">
-                <label for="trialNote">可上课时间 / 其他问题</label>
-                <textarea id="trialNote" name="trialNote" placeholder="例如：平日晚间更方便；想了解 L3 或 L4。"></textarea>
-              </div>
-            </div>
-
-            <div class="form-actions">
-              <button class="btn btn-primary" type="submit">用邮件发送试课信息</button>
-              <a class="btn btn-soft js-external-form" data-tab="art" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAALC9j_JUOEVBV1Q3TUU1MFZDUDJOWEs1VUczWldRTC4u&amp;origin=QRCode" target="_blank" rel="noopener noreferrer">打开原预约表</a>
-              <button class="btn btn-soft" type="button" id="copyTrial">复制信息模板</button>
-            </div>
-          </form>
-          <p class="small-note">正式课价格、课包和 1对1 细节，可联系教务老师了解。</p>
         </div>
       </div>
     </section>
@@ -430,36 +370,12 @@
           </div>
 
           <div class="form-card feedback-panel">
-            <h3>提交老师评价</h3>
-            <p class="small-note feedback-note">写一句话或一段完整反馈都可以。展示方式请选择匿名或署名。</p>
-
-            <form id="feedbackForm">
-              <div class="form-grid">
-                <div class="field">
-                  <label for="feedbackName">署名方式</label>
-                  <select id="feedbackName" name="feedbackName">
-                    <option>匿名展示</option>
-                    <option>署名展示</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="teacherName">老师姓名</label>
-                  <input id="teacherName" name="teacherName" placeholder="例如：王老师" />
-                </div>
-                <div class="field full">
-                  <label for="keywords">推荐关键词</label>
-                  <input id="keywords" name="keywords" placeholder="例如：温柔、耐心、会引导、不跟画" />
-                </div>
-                <div class="field full">
-                  <label for="comment">完整评价</label>
-                  <textarea id="comment" name="comment" placeholder="可以写孩子的变化、课堂体验，或你最想推荐老师的一点。"></textarea>
-                </div>
-              </div>
-              <div class="form-actions">
-                <button class="btn btn-primary" type="submit">用邮件提交评价</button>
-                <button class="btn btn-soft" type="button" id="copyFeedback">复制评价模板</button>
-              </div>
-            </form>
+            <h3>想留一句评价？</h3>
+            <p class="small-note feedback-note">写一两句就好，告诉我们孩子的变化或课堂体验，展示时可以选匿名或署名。</p>
+            <div class="form-actions">
+              <a class="btn btn-primary" href="mailto:caizhao8926@gmail.com?subject=Panda%20Art%20%E8%80%81%E5%B8%88%E8%AF%84%E4%BB%B7&amp;body=%E7%BD%B2%E5%90%8D%E6%96%B9%E5%BC%8F%EF%BC%88%E5%8C%BF%E5%90%8D%2F%E7%BD%B2%E5%90%8D%EF%BC%89%EF%BC%9A%0A%E8%80%81%E5%B8%88%E5%A7%93%E5%90%8D%EF%BC%9A%0A%E8%AF%84%E4%BB%B7%EF%BC%9A">用邮件发送评价</a>
+              <button class="btn btn-soft" type="button" id="copyFeedbackTemplate">复制评价模板</button>
+            </div>
           </div>
         </div>
 
@@ -493,39 +409,39 @@
           <p>把试课、请假、材料和价格沟通提前说清楚。</p>
         </div>
 
-        <div class="qa-grid">
-          <article class="qa">
-            <h3>试课多少钱？</h3>
+        <div class="qa-list">
+          <details class="qa">
+            <summary><h3>试课多少钱？</h3></summary>
             <p>跟班试课 $6。适合哪个班级，请先联系教务老师确认。</p>
-          </article>
-          <article class="qa">
-            <h3>正式课价格在哪里看？</h3>
+          </details>
+          <details class="qa">
+            <summary><h3>正式课价格在哪里看？</h3></summary>
             <p>正式课价格、课包和折扣，请联系教务老师了解。</p>
-          </article>
-          <article class="qa">
-            <h3>怎么请假？</h3>
+          </details>
+          <details class="qa">
+            <summary><h3>怎么请假？</h3></summary>
             <p>课前在学生 App 系统里请假。课程开始后未请假，会自动消耗课时，无法补课。</p>
-          </article>
-          <article class="qa">
-            <h3>请假次数够用吗？</h3>
+          </details>
+          <details class="qa">
+            <summary><h3>请假次数够用吗？</h3></summary>
             <p>每个课包有对应请假次数。正常请假需求通常够用；长期请假可申请休学。</p>
-          </article>
-          <article class="qa">
-            <h3>授课语言是什么？</h3>
+          </details>
+          <details class="qa">
+            <summary><h3>授课语言是什么？</h3></summary>
             <p>目前线上绘画课程为中文授课。</p>
-          </article>
-          <article class="qa">
-            <h3>课前会提醒吗？</h3>
+          </details>
+          <details class="qa">
+            <summary><h3>课前会提醒吗？</h3></summary>
             <p>会。教务老师会在课前发送上课提醒。</p>
-          </article>
-          <article class="qa">
-            <h3>需要准备什么材料？</h3>
+          </details>
+          <details class="qa">
+            <summary><h3>需要准备什么材料？</h3></summary>
             <p>摄像头或直角镜、605细黑色勾线笔、205粗黑色勾线笔、水彩笔、蜡笔、马克笔、画纸、铅笔和橡皮。</p>
-          </article>
-          <article class="qa">
-            <h3>有没有 1对1？</h3>
+          </details>
+          <details class="qa">
+            <summary><h3>有没有 1对1？</h3></summary>
             <p>有 Private Lesson（1对1）。具体安排可咨询教务老师。</p>
-          </article>
+          </details>
         </div>
       </div>
 
@@ -538,23 +454,23 @@
           <p>中文课刚开始筹备，以下是目前能确定的信息。</p>
         </div>
 
-        <div class="qa-grid">
-          <article class="qa">
-            <h3>中文课什么时候开始？</h3>
+        <div class="qa-list">
+          <details class="qa">
+            <summary><h3>中文课什么时候开始？</h3></summary>
             <p>计划 2026 年开始试课，具体排期以教务老师通知为准。</p>
-          </article>
-          <article class="qa">
-            <h3>适合什么年龄？</h3>
+          </details>
+          <details class="qa">
+            <summary><h3>适合什么年龄？</h3></summary>
             <p>面向海外华裔儿童，具体适合班级请联系教务老师根据孩子情况推荐。</p>
-          </article>
-          <article class="qa">
-            <h3>授课语言和形式是什么？</h3>
+          </details>
+          <details class="qa">
+            <summary><h3>授课语言和形式是什么？</h3></summary>
             <p>中文授课，线上小班互动教学，结合文化与艺术元素学习汉字。</p>
-          </article>
-          <article class="qa">
-            <h3>价格和课包怎么看？</h3>
+          </details>
+          <details class="qa">
+            <summary><h3>价格和课包怎么看？</h3></summary>
             <p>正式课价格、课包细节，请联系教务老师了解。</p>
-          </article>
+          </details>
         </div>
       </div>
     </section>

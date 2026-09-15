@@ -137,35 +137,12 @@ async function copyText(text, successText) {
   }
 }
 
-function getTrialText() {
-  const course = document.getElementById("courseInterest").value || "";
-  const name = document.getElementById("studentName").value || "";
-  const gender = document.getElementById("gender").value || "";
-  const birth = document.getElementById("birthMonth").value || "";
-  const exp = document.getElementById("experience").value || "";
-  const contact = document.getElementById("parentContact").value || "";
-  const note = document.getElementById("trialNote").value || "";
-
-  return [
-    "Panda Art / Panda Chinese 试课信息",
-    "",
-    `咨询课程：${course}`,
-    `学生名字：${name}`,
-    `性别：${gender}`,
-    `生日年月：${birth}`,
-    `相关经验：${exp}`,
-    `家长联系方式：${contact}`,
-    `可上课时间 / 其他问题：${note}`
-  ].join("\n");
-}
-
 function initTabs() {
   const buttons = document.querySelectorAll("[data-tab-btn]");
   if (!buttons.length) return;
 
   const trialEyebrow = document.getElementById("trialEyebrow");
   const trialHeading = document.getElementById("trialHeading");
-  const courseField = document.getElementById("courseInterest");
 
   function setTab(tab) {
     document.body.setAttribute("data-active-tab", tab);
@@ -173,12 +150,10 @@ function initTabs() {
 
     if (tab === "chinese") {
       if (trialEyebrow) trialEyebrow.textContent = "预约中文试课";
-      if (trialHeading) trialHeading.textContent = "登记中文试课意向";
-      if (courseField) courseField.value = "中文识字课";
+      if (trialHeading) trialHeading.textContent = "联系教务老师，预约中文试课";
     } else {
       if (trialEyebrow) trialEyebrow.textContent = "$6 跟班试课";
-      if (trialHeading) trialHeading.textContent = "直接试课，请留下这些信息";
-      if (courseField) courseField.value = "美术绘画课";
+      if (trialHeading) trialHeading.textContent = "联系教务老师，预约试课";
     }
   }
 
@@ -186,21 +161,13 @@ function initTabs() {
   setTab("art");
 }
 
-function getFeedbackText() {
-  const display = document.getElementById("feedbackName").value || "";
-  const teacher = document.getElementById("teacherName").value || "";
-  const keywords = document.getElementById("keywords").value || "";
-  const comment = document.getElementById("comment").value || "";
-
-  return [
-    "Panda Art Online 老师评价",
-    "",
-    `署名方式：${display}`,
-    `老师姓名：${teacher}`,
-    `推荐关键词：${keywords}`,
-    `完整评价：${comment}`
-  ].join("\n");
-}
+const FEEDBACK_TEMPLATE = [
+  "Panda Art 老师评价",
+  "",
+  "署名方式（匿名/署名）：",
+  "老师姓名：",
+  "评价："
+].join("\n");
 
 document.addEventListener("click", (event) => {
   const copyTarget = event.target.closest("[data-copy]");
@@ -209,24 +176,8 @@ document.addEventListener("click", (event) => {
   }
 });
 
-document.getElementById("trialForm").addEventListener("submit", (event) => {
-  event.preventDefault();
-  const body = encodeURIComponent(getTrialText());
-  window.location.href = `mailto:caizhao8926@gmail.com?subject=${encodeURIComponent("Panda Art / Panda Chinese 试课预约")}&body=${body}`;
-});
-
-document.getElementById("copyTrial").addEventListener("click", () => {
-  copyText(getTrialText(), "已复制试课信息模板");
-});
-
-document.getElementById("feedbackForm").addEventListener("submit", (event) => {
-  event.preventDefault();
-  const body = encodeURIComponent(getFeedbackText());
-  window.location.href = `mailto:caizhao8926@gmail.com?subject=${encodeURIComponent("Panda Art Online 老师评价")}&body=${body}`;
-});
-
-document.getElementById("copyFeedback").addEventListener("click", () => {
-  copyText(getFeedbackText(), "已复制评价模板");
+document.getElementById("copyFeedbackTemplate").addEventListener("click", () => {
+  copyText(FEEDBACK_TEMPLATE, "已复制评价模板");
 });
 
 buildBoard();
