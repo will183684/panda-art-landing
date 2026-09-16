@@ -152,7 +152,7 @@ function initTabs() {
       if (trialEyebrow) trialEyebrow.textContent = "预约中文试课";
       if (trialHeading) trialHeading.textContent = "联系教务老师，预约中文试课";
     } else {
-      if (trialEyebrow) trialEyebrow.textContent = "$6 跟班试课";
+      if (trialEyebrow) trialEyebrow.textContent = "$6 试课";
       if (trialHeading) trialHeading.textContent = "联系教务老师，预约试课";
     }
   }
@@ -164,7 +164,7 @@ function initTabs() {
 document.addEventListener("click", (event) => {
   const copyTarget = event.target.closest("[data-copy]");
   if (copyTarget) {
-    copyText(copyTarget.dataset.copy, "已复制微信号");
+    copyText(copyTarget.dataset.copy, "已复制");
   }
 });
 
