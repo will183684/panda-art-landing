@@ -149,8 +149,8 @@ function initTabs() {
     buttons.forEach((b) => b.setAttribute("aria-selected", String(b.dataset.tabBtn === tab)));
 
     if (tab === "chinese") {
-      if (trialEyebrow) trialEyebrow.textContent = "免费体验课";
-      if (trialHeading) trialHeading.textContent = "联系教务老师，预约免费体验课";
+      if (trialEyebrow) trialEyebrow.textContent = "$6 试课";
+      if (trialHeading) trialHeading.textContent = "联系教务老师，预约试课";
     } else {
       if (trialEyebrow) trialEyebrow.textContent = "$6 试课";
       if (trialHeading) trialHeading.textContent = "联系教务老师，预约试课";
