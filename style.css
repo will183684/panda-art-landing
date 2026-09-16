@@ -874,6 +874,10 @@ footer {
 .float-bubble.b6 { left: 21%; top: 66%; --speed: 10s; animation-delay: -3s; }
 .float-bubble.b7 { left: 58%; top: 70%; --speed: 11.5s; animation-delay: -6s; }
 .float-bubble.b8 { left: 31%; top: 31%; --speed: 8s; animation-delay: -2.8s; background: rgba(255, 229, 184, .94); }
+.float-bubble.b9 { left: 70%; top: 40%; --speed: 10s; animation-delay: -4.5s; }
+.float-bubble.b10 { left: 8%; top: 58%; --speed: 9.5s; animation-delay: -1.5s; }
+.float-bubble.b11 { left: 26%; top: 2%; --speed: 11s; animation-delay: -3.5s; background: rgba(255, 229, 184, .94); }
+.float-bubble.b12 { left: 72%; top: 60%; --speed: 8.5s; animation-delay: -5.5s; }
 
 @keyframes floatAround {
   0% { transform: translate(-7px, 8px) scale(.98); }
