@@ -161,23 +161,11 @@ function initTabs() {
   setTab("art");
 }
 
-const FEEDBACK_TEMPLATE = [
-  "Panda Art 老师评价",
-  "",
-  "署名方式（匿名/署名）：",
-  "老师姓名：",
-  "评价："
-].join("\n");
-
 document.addEventListener("click", (event) => {
   const copyTarget = event.target.closest("[data-copy]");
   if (copyTarget) {
     copyText(copyTarget.dataset.copy, "已复制微信号");
   }
-});
-
-document.getElementById("copyFeedbackTemplate").addEventListener("click", () => {
-  copyText(FEEDBACK_TEMPLATE, "已复制评价模板");
 });
 
 buildBoard();
