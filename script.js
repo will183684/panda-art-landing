@@ -24,7 +24,8 @@ const LEVEL_LABELS = {
   PRIVATE: "Private / 1-on-1"
 };
 
-const schedule = {
+// 兜底课表：schedule.json 读不到时才用。正常情况下以 schedule.json 为准（scripts/sync-schedule.mjs 生成）。
+const fallbackSchedule = {
   "周一": [
     { time: "5:00 PM", level: "L4", count: 2 },
     { time: "6:00 PM", level: "L4", count: 4 },
@@ -52,8 +53,31 @@ function colorFor(cls) {
   return LEVEL_COLORS[cls.colorKey] || LEVEL_COLORS[cls.level];
 }
 
-function buildBoard() {
-  const board = document.getElementById("scheduleBoard");
+const DAY_ORDER = [1, 2, 3, 4, 5, 6, 0];
+
+function groupByDay(classes) {
+  const out = {};
+  for (const dow of DAY_ORDER) {
+    const day = classes.filter((c) => c.dow === dow);
+    if (day.length) out[day[0].day] = day;
+  }
+  return out;
+}
+
+async function loadSchedules() {
+  try {
+    const res = await fetch("schedule.json", { cache: "no-store" });
+    if (!res.ok) throw new Error(res.status);
+    const data = await res.json();
+    const art = data.classes.filter((c) => c.subject !== "中文");
+    const chinese = data.classes.filter((c) => c.subject === "中文");
+    return { art: art.length ? groupByDay(art) : fallbackSchedule, chinese: groupByDay(chinese) };
+  } catch (e) {
+    return { art: fallbackSchedule, chinese: {} };
+  }
+}
+
+function buildBoard(board, schedule) {
   Object.entries(schedule).forEach(([day, classes]) => {
     const col = document.createElement("div");
     col.className = "day-col";
@@ -168,6 +192,13 @@ document.addEventListener("click", (event) => {
   }
 });
 
-buildBoard();
 buildLegend();
 initTabs();
+loadSchedules().then(({ art, chinese }) => {
+  buildBoard(document.getElementById("scheduleBoard"), art);
+  const cn = document.getElementById("scheduleBoardChinese");
+  if (cn && Object.keys(chinese).length) {
+    buildBoard(cn, chinese);
+    cn.hidden = false;
+  }
+});
