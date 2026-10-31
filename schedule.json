@@ -1,0 +1,145 @@
+{
+  "generatedAt": "2026-10-31T02:31:41.682Z",
+  "classes": [
+    {
+      "dow": 0,
+      "day": "周日",
+      "start": "17:00",
+      "time": "5:00 PM",
+      "subject": "画画",
+      "count": 2,
+      "level": "L2"
+    },
+    {
+      "dow": 0,
+      "day": "周日",
+      "start": "17:55",
+      "time": "5:55 PM",
+      "subject": "中文",
+      "count": 3,
+      "level": "L2"
+    },
+    {
+      "dow": 1,
+      "day": "周一",
+      "start": "18:00",
+      "time": "6:00 PM",
+      "subject": "画画",
+      "count": 5,
+      "level": "L3"
+    },
+    {
+      "dow": 1,
+      "day": "周一",
+      "start": "18:00",
+      "time": "6:00 PM",
+      "subject": "画画",
+      "count": 5,
+      "level": "L4"
+    },
+    {
+      "dow": 1,
+      "day": "周一",
+      "start": "19:05",
+      "time": "7:05 PM",
+      "subject": "画画",
+      "count": 4,
+      "level": "L5"
+    },
+    {
+      "dow": 1,
+      "day": "周一",
+      "start": "19:05",
+      "time": "7:05 PM",
+      "subject": "画画",
+      "count": 3,
+      "level": "L4"
+    },
+    {
+      "dow": 2,
+      "day": "周二",
+      "start": "17:00",
+      "time": "5:00 PM",
+      "subject": "画画",
+      "count": 1,
+      "level": "PRIVATE",
+      "note": "1-on-1"
+    },
+    {
+      "dow": 2,
+      "day": "周二",
+      "start": "17:50",
+      "time": "5:50 PM",
+      "subject": "画画",
+      "count": 5,
+      "level": "L4"
+    },
+    {
+      "dow": 2,
+      "day": "周二",
+      "start": "18:00",
+      "time": "6:00 PM",
+      "subject": "画画",
+      "count": 5,
+      "level": "L2"
+    },
+    {
+      "dow": 2,
+      "day": "周二",
+      "start": "19:00",
+      "time": "7:00 PM",
+      "subject": "画画",
+      "count": 4,
+      "level": "L3"
+    },
+    {
+      "dow": 4,
+      "day": "周四",
+      "start": "17:50",
+      "time": "5:50 PM",
+      "subject": "画画",
+      "count": 2,
+      "level": "L6"
+    },
+    {
+      "dow": 4,
+      "day": "周四",
+      "start": "18:10",
+      "time": "6:10 PM",
+      "subject": "画画",
+      "count": 2,
+      "level": "L6",
+      "colorKey": "SKETCH",
+      "badge": "素描"
+    },
+    {
+      "dow": 4,
+      "day": "周四",
+      "start": "18:55",
+      "time": "6:55 PM",
+      "subject": "画画",
+      "count": 4,
+      "level": "L1"
+    },
+    {
+      "dow": 4,
+      "day": "周四",
+      "start": "19:00",
+      "time": "7:00 PM",
+      "subject": "中文",
+      "count": 3,
+      "level": "L1"
+    },
+    {
+      "dow": 5,
+      "day": "周五",
+      "start": "17:00",
+      "time": "5:00 PM",
+      "subject": "画画",
+      "count": 1,
+      "level": "L6",
+      "colorKey": "COLOR_PENCIL",
+      "badge": "彩铅"
+    }
+  ]
+}
