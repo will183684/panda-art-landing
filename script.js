@@ -64,16 +64,14 @@ function groupByDay(classes) {
   return out;
 }
 
-async function loadSchedules() {
+async function loadSchedule() {
   try {
     const res = await fetch("schedule.json", { cache: "no-store" });
     if (!res.ok) throw new Error(res.status);
     const data = await res.json();
-    const art = data.classes.filter((c) => c.subject !== "中文");
-    const chinese = data.classes.filter((c) => c.subject === "中文");
-    return { art: art.length ? groupByDay(art) : fallbackSchedule, chinese: groupByDay(chinese) };
+    return data.classes.length ? groupByDay(data.classes) : fallbackSchedule;
   } catch (e) {
-    return { art: fallbackSchedule, chinese: {} };
+    return fallbackSchedule;
   }
 }
 
@@ -102,11 +100,12 @@ function buildBoard(board, schedule) {
       const content = document.createElement("div");
       content.className = "class-content";
 
-      if (cls.badge) {
+      const badgeText = cls.badge || (cls.subject === "中文" ? "中文" : "");
+      if (badgeText) {
         const badge = document.createElement("span");
         badge.className = "badge";
         badge.style.color = base;
-        badge.textContent = cls.badge;
+        badge.textContent = badgeText;
         content.appendChild(badge);
       }
 
@@ -194,11 +193,7 @@ document.addEventListener("click", (event) => {
 
 buildLegend();
 initTabs();
-loadSchedules().then(({ art, chinese }) => {
-  buildBoard(document.getElementById("scheduleBoard"), art);
-  const cn = document.getElementById("scheduleBoardChinese");
-  if (cn && Object.keys(chinese).length) {
-    buildBoard(cn, chinese);
-    cn.hidden = false;
-  }
+loadSchedule().then((schedule) => {
+  buildBoard(document.getElementById("scheduleBoard"), schedule);
+  buildBoard(document.getElementById("scheduleBoardChinese"), schedule);
 });
