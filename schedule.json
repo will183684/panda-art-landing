@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:31:41.682Z",
+  "generatedAt": "2026-10-31T05:50:10.726Z",
   "classes": [
     {
       "dow": 0,
@@ -68,8 +68,8 @@
     {
       "dow": 2,
       "day": "周二",
-      "start": "17:50",
-      "time": "5:50 PM",
+      "start": "17:55",
+      "time": "5:55 PM",
       "subject": "画画",
       "count": 5,
       "level": "L4"
