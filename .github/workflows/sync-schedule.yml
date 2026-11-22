@@ -1,0 +1,44 @@
+name: Sync schedule
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Pull schedule from the attendance app
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: node scripts/sync-schedule.mjs
+      - name: Commit if the schedule changed
+        id: commit
+        run: |
+          # generatedAt changes every run; only commit when the classes differ
+          if git diff --quiet -I'"generatedAt"' schedule.json; then
+            git checkout schedule.json
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git config user.name "schedule-sync"
+            git config user.email "schedule-sync@users.noreply.github.com"
+            git add schedule.json
+            git commit -m "Sync schedule from attendance app"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Deploy to Netlify
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: 947ce228-b5ff-44d7-958d-8536fb612f73
+        run: npx --yes netlify-cli@17 deploy --prod --dir=.
