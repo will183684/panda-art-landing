@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T05:50:10.726Z",
+  "generatedAt": "2026-11-22T07:39:53.863Z",
   "classes": [
     {
       "dow": 0,
@@ -43,8 +43,8 @@
       "start": "19:05",
       "time": "7:05 PM",
       "subject": "画画",
-      "count": 4,
-      "level": "L5"
+      "count": 3,
+      "level": "L4"
     },
     {
       "dow": 1,
@@ -53,7 +53,7 @@
       "time": "7:05 PM",
       "subject": "画画",
       "count": 3,
-      "level": "L4"
+      "level": "L5"
     },
     {
       "dow": 2,
@@ -93,6 +93,15 @@
       "level": "L3"
     },
     {
+      "dow": 3,
+      "day": "周三",
+      "start": "18:00",
+      "time": "6:00 PM",
+      "subject": "画画",
+      "count": 2,
+      "level": "L5"
+    },
+    {
       "dow": 4,
       "day": "周四",
       "start": "17:50",
@@ -100,6 +109,16 @@
       "subject": "画画",
       "count": 2,
       "level": "L6"
+    },
+    {
+      "dow": 4,
+      "day": "周四",
+      "start": "18:00",
+      "time": "6:00 PM",
+      "subject": "画画",
+      "count": 1,
+      "level": "PRIVATE",
+      "note": "1-on-1"
     },
     {
       "dow": 4,
